@@ -1,3 +1,22 @@
 {
-  "user":[]
+  "user": [
+    {
+      "name": "vraj",
+      "email": "ivraj@gmail.com",
+      "password": "!@@123AAwe",
+      "id": 1
+    },
+    {
+      "name": "fgh",
+      "email": "vrajlukhi@gmail.com",
+      "password": "!FDG23avg",
+      "id": 2
+    },
+    {
+      "name": "jay",
+      "email": "jay@gmail.com",
+      "password": "HFC$#W%#qdr2@",
+      "id": 3
+    }
+  ]
 }

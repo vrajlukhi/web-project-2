@@ -25,7 +25,41 @@
             </nav>
         </div>
     </header>
+    <section class="bg-sign  padding-80">
+        <h2></h2>
+        <div class="container bg-white rounded-5">
+            <div class="sign_up row align-items-center">
+                <div class="col-12 col-md-6 mx-auto">
+                    <p class="text-primary fw-bold fs-3 text-uppercase border-bottom text-center border-2 border-primary">sign up</p>
+                    <form id="signup">
+                        <div class="col-12 col-md-8 mx-auto my-5">
+                            <input type="text" id="name" class="w-100  border-top-0 border-start-0 border-end-0 border-primary fw-semibold fs-5" required placeholder="user name *">
+                            <div id="n_err"></div>
+                        </div>
+                        <div class="col-12 col-md-8 mx-auto my-5">
+                            <input type="email" id="email" class="w-100 border-top-0 border-start-0 border-end-0 border-primary fw-semibold fs-5"  required placeholder="user_email123@gmail.com *">
+                            <div id="e_err"></div>
+                        </div>
+                        <div class="col-12 col-md-8 mx-auto my-5">
+                            <input type="password" id="password" class="w-100 border-top-0 border-start-0 border-end-0 border-primary fw-semibold fs-5 " required placeholder="User_password@#123 *">
+                            <div id="p_err"></div>
+                        </div>
+                        <div class="col-12 col-md-8 mx-auto my-5">
+                            <input type="checkbox" class="p-2" required><label class="fw-semibold">Agree to Terms and Conditions</label>
+                        </div>
+                        <div class="col-12 col-md-8 mx-auto">
+                            <p class="text-uppercase fw-semibold mx-auto">already have an account ? <a href="./login.html">login</a></p>
+                        </div>
+                        <div class="col-12 col-md-8 mx-auto my-5">
+                            <input type="submit" value="sign up" id="sign-btn" class="btn col-12 fw-semibold text-uppercase rounded-pill fs-5">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/signup.js"></script>
 </html>
