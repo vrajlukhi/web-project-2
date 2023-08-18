@@ -1,3 +1,6 @@
+import Navbar from "../components/i_x.js";
+document.getElementById("navbar").innerHTML = Navbar()
+
 const login = (e) => {
     e.preventDefault()
     let user = {
