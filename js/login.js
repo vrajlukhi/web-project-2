@@ -1,4 +1,4 @@
-import Navbar from "../components/i_x.js";
+import Navbar from "../components/nav.js";
 document.getElementById("navbar").innerHTML = Navbar()
 
 const login = (e) => {
@@ -51,7 +51,7 @@ document.getElementById("password").addEventListener("keypress", () => {
     let p_pattern = /(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?].*).{8,}/;
 
     if (!p_pattern.test(password)) {
-        document.getElementById("p_err").innerHTML = `plase enter the propar password`
+        document.getElementById("p_err").innerHTML = `please enter the propar password`
         document.getElementById("p_err").classList.add("text-danger")
         document.getElementById("password").classList.add("border-danger")
         document.getElementById("password").classList.add("text-danger")

@@ -1,4 +1,4 @@
-import Navbar from "../components/i_x.js";
+import Navbar from "../components/nav.js";
 document.getElementById("navbar").innerHTML = Navbar()
 
 const sign = (e) => {

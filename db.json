@@ -17,6 +17,44 @@
       "email": "jay@gmail.com",
       "password": "HFC$#W%#qdr2@",
       "id": 3
+    },
+    {
+      "name": "vraj",
+      "email": "ivraj123@gmail.com",
+      "password": "gjv13AS@##",
+      "id": 4
+    }
+  ],
+  "prodcut": [
+    {
+      "title": "KALANCHOE BLOOMING PLANT",
+      "selling-price": "Rs 555.00",
+      "orginal-price": "Rs 649.00",
+      "img-1": "img/p-12.jpg",
+      "img-2": "img/p-12(1).jpg",
+      "img-3": "img/p-12(2).jpg",
+      "catagary": "flowering",
+      "id": 1
+    },
+    {
+      "title": "BABY GROOT SYNGONIUM",
+      "selling_price": "Rs 590.00",
+      "orginal_price": "Rs 649.00",
+      "img1": "img/p-1.jpg",
+      "img2": "img/p-1(1).jpg",
+      "img3": "img/p-1(2).jpg",
+      "catagary": "gift plants",
+      "id": 2
+    },
+    {
+      "title": "PICTURESQUE FICUS ICELAND OLDROOTS",
+      "selling-price": "Rs 4495.00",
+      "orginal-price": "Rs 6999.00",
+      "img-1": "img/p-22.jpg",
+      "img-2": "img/p-22(1).jpg",
+      "img-3": "img/p-22(2).jpg",
+      "catagary": "bonsai plants",
+      "id": 3
     }
   ]
 }
