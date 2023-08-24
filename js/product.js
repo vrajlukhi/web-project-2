@@ -27,19 +27,19 @@ const display = (data) => {
     let btn = document.createElement("button");
     btn.innerHTML ="Buy Now"
     btn.addEventListener("click", () => {
-      if (localStorage.getItem("user")) {
+      // if (localStorage.getItem("user")) {
         fetch("http://localhost:3000/cart", {
           method: "POST",
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(product)
         })
-      }
-      else{
-        alert("please first login then you can add to cart")
-        setTimeout(
-          window.location.href="../pages/login.html"
-        ,1000)
-      }
+      // }
+      // else{
+      //   alert("please first login then you can add to cart")
+      //   setTimeout(
+      //     window.location.href="../pages/login.html"
+      //   ,1000)
+      // }
     })
     let div = document.createElement("div");
     div.append(img,title,category,price,rating,btn);
