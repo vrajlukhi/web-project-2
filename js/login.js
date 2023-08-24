@@ -10,7 +10,7 @@ const login = (e) => {
     fetch(`http://localhost:3000/user?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
-            if (data.lenght > 0) {
+            if (data.length > 0) {
                 if (data[0].password === user.password) {
                     alert("Login succesfully comlete"),
                     window.location.href="../index.html"

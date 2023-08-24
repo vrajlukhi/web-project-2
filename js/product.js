@@ -1,52 +1,63 @@
 import Navbar from "../components/nav.js";
 document.getElementById("navbar").innerHTML = Navbar()
 
+let arr=[]
 
-const ui = (data) => {
-    data.map((prodcut) => {
-      if (prodcut.catagary == "gift plants") {
-        let img1 = document.createElement("img")
-        img1.src = prodcut.img1
-        let img2 = document.createElement("img")
-        img2.src = prodcut.img2
-        let img3 = document.createElement("img")
-        img3.src = prodcut.img3
-        let title = document.createElement("p")
-        title.innerHTML = prodcut.title
-        let selling_price = document.createElement("p")
-        selling_price.innerHTML = prodcut.selling_price
-        let orginal_price = document.createElement("p")
-        orginal_price.innerHTML = prodcut.orginal_price
-        let btn = document.createElement("button")
-        btn.innerHTML = "add to cart"
-        btn.addEventListener("click", () => {
-          console.log(prodcut.id)
-          if (localStorage.getItem("login")) {
-            fetch("http://localhost:3000/cart", {
-              method: "POST",
-              headers: { 'content-type': 'application/json' },
-              body: JSON.stringify(prodcut)
-            })
-          }
-          else{
-            alert("please first login then you can add to cart")
-            setTimeout(
-              window.location.href="/login.html"
-            ,1000)
-          }
+const display = (data) => {
+  data.map((product) => {
+    let img = document.createElement("img");
+    img.src = product.image;
+    let title = document.createElement("h6");
+    title.innerHTML = product.title;
+    let price = document.createElement("p");
+    price.innerHTML = product.price;
+    let category = document.createElement("p");
+    category.innerHTML = product.category;
+    let rating = document.createElement("p");
+    rating.innerHTML = product.rating.rate;
+    if (product.rating.rate > 4) {
+      rating.style.color = "green";
+    } else if (product.rating.rate <= 4 && product.rating.rate >= 3) {
+      rating.style.color = "yellow";
+    }else if (product.rating.rate <3 && product.rating.rate >= 2) {
+      rating.style.color = "orange";
+    } else {
+      rating.style.color = "red";
+    }
+    let btn = document.createElement("button");
+    btn.innerHTML ="Buy Now"
+    btn.addEventListener("click", () => {
+      if (localStorage.getItem("user")) {
+        fetch("http://localhost:3000/cart", {
+          method: "POST",
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(product)
         })
-        let div = document.createElement("div")
-        div.append(img1, title, orginal_price, selling_price, btn)
-        document.getElementById("flowersing-plant").append(div)
+      }
+      else{
+        alert("please first login then you can add to cart")
+        setTimeout(
+          window.location.href="../pages/login.html"
+        ,1000)
       }
     })
-  };
-  
-  let get = async () => {
-    let res = await fetch("http://localhost:3000/prodcut");
-    let data = await res.json();
-    ui(data);
-    console.log(data)
-  };
-  
-  get();
+    let div = document.createElement("div");
+    div.append(img,title,category,price,rating,btn);
+    document.getElementById("ui-box").append(div)
+  })
+};
+document.getElementById("lth").addEventListener("click", () => {
+  let data=products.sort((a, b) => a.price - b.price)
+  display(data)
+})
+document.getElementById("htl").addEventListener("click", () => {
+  let data=products.sort((a, b) => b.price - a.price)
+  display(data)
+})
+
+const get = () => {
+  fetch("http://localhost:3000/products")
+    .then((response) => response.json())
+    .then((data) => {display(data)});
+};
+get();
